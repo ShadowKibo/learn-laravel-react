@@ -1,9 +1,10 @@
 import React from "react";
-import Menu from "./components/menu";
+import Crud from "./components/Crud";
+
 function App() {
     return (
         <div>
-            <Menu />
+            <Crud />
         </div>
     );
 }
