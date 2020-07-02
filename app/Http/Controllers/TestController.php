@@ -73,9 +73,10 @@ class TestController extends Controller
      * @param  \App\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function edit(test $test)
+    public function edit($name_id)
     {
-        //
+        $data = test::findOrFail($name_id);
+        return response()->json($data);
     }
 
     /**
@@ -96,8 +97,10 @@ class TestController extends Controller
      * @param  \App\test  $test
      * @return \Illuminate\Http\Response
      */
-    public function destroy(test $test)
+    public function destroy($id)
     {
-        //
+
+        $data = test::where('name_id', $id)->delete();
+        return response()->json($data, 202);
     }
 }
